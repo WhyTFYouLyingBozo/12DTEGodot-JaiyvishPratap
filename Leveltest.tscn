@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct4d28sb5ucrm"]
+
+[ext_resource type="PackedScene" uid="uid://h37n10o23c6v" path="res://testscene.blend" id="1_pl6ir"]
+[ext_resource type="Texture2D" uid="uid://ddb1c803jvrnm" path="res://kenney_prototype-textures/PNG/Dark/texture_01.png" id="2_lxr7x"]
+[ext_resource type="Texture2D" uid="uid://bvj6642lpl4qd" path="res://kenney_prototype-textures/PNG/Purple/texture_03.png" id="3_i2bjw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vp7hd"]
+albedo_texture = ExtResource("2_lxr7x")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpos7"]
+albedo_texture = ExtResource("3_i2bjw")
+
+[node name="testscene" instance=ExtResource("1_pl6ir")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vp7hd")
+
+[node name="Cylinder" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qpos7")
