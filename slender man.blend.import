@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://vb8ahinuf1rw"
-path="res://.godot/imported/Building.blend-f8ccd5e2ba0ce5581c1e6d4cf00ca7a3.scn"
+uid="uid://ug7tjja5ues6"
+path="res://.godot/imported/slender man.blend-7080e2f15b793d41634f0a10b5e5ff64.scn"
 
 [deps]
 
-source_file="res://Building.blend"
-dest_files=["res://.godot/imported/Building.blend-f8ccd5e2ba0ce5581c1e6d4cf00ca7a3.scn"]
+source_file="res://slender man.blend"
+dest_files=["res://.godot/imported/slender man.blend-7080e2f15b793d41634f0a10b5e5ff64.scn"]
 
 [params]
 
