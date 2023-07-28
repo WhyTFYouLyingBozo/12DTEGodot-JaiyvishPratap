@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b58rng4wbdoi8"]
+[gd_scene load_steps=7 format=3 uid="uid://b58rng4wbdoi8"]
 
 [ext_resource type="PackedScene" uid="uid://briq17f7isx8u" path="res://Player.tscn" id="1_8je17"]
 [ext_resource type="PackedScene" uid="uid://dfv18yy8mkka8" path="res://building.tscn" id="1_nm2g1"]
+[ext_resource type="PackedScene" uid="uid://ug7tjja5ues6" path="res://slender man.blend" id="3_l6ruh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2yhjd"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -29,3 +30,6 @@ environment = SubResource("Environment_6ikth")
 
 [node name="Player" parent="." instance=ExtResource("1_8je17")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.8749, 14.1495, -107.347)
+
+[node name="slender man" parent="." instance=ExtResource("3_l6ruh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.7674, -34.0907, -24.6894)
