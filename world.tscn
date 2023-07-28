@@ -1,31 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhniqjy4tln5g"]
+[gd_scene load_steps=6 format=3 uid="uid://b58rng4wbdoi8"]
 
 [ext_resource type="PackedScene" uid="uid://briq17f7isx8u" path="res://Player.tscn" id="1_8je17"]
-[ext_resource type="PackedScene" uid="uid://ct4d28sb5ucrm" path="res://Leveltest.tscn" id="1_bo1a1"]
+[ext_resource type="PackedScene" uid="uid://dfv18yy8mkka8" path="res://building.tscn" id="1_nm2g1"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x21jb"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2yhjd"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_y3j0x"]
-sky_material = SubResource("ProceduralSkyMaterial_x21jb")
+[sub_resource type="Sky" id="Sky_08x8y"]
+sky_material = SubResource("ProceduralSkyMaterial_2yhjd")
 
-[sub_resource type="Environment" id="Environment_dli3h"]
+[sub_resource type="Environment" id="Environment_6ikth"]
 background_mode = 2
-sky = SubResource("Sky_y3j0x")
+sky = SubResource("Sky_08x8y")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="World" type="Node3D"]
+[node name="world" type="Node3D"]
+
+[node name="Building" parent="." instance=ExtResource("1_nm2g1")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_dli3h")
+environment = SubResource("Environment_6ikth")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_8je17")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.16502, 1.24322, -2.32834)
-
-[node name="testscene" parent="." instance=ExtResource("1_bo1a1")]
+[node name="Player" parent="." instance=ExtResource("1_8je17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.8749, 14.1495, -107.347)

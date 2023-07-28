@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfv18yy8mkka8"]
+
+[ext_resource type="PackedScene" uid="uid://vb8ahinuf1rw" path="res://Building.blend" id="1_yftbf"]
+[ext_resource type="Texture2D" uid="uid://c8sfxf7ny3v5q" path="res://kenney_prototype-textures/PNG/Dark/texture_08.png" id="2_wrhit"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bv7l3"]
+albedo_texture = ExtResource("2_wrhit")
+
+[node name="Building" instance=ExtResource("1_yftbf")]
+
+[node name="Building" parent="." index="0"]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, -23.2349, -4.20779, 0.139446)
+material_override = SubResource("StandardMaterial3D_bv7l3")
