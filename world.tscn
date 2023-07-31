@@ -29,7 +29,12 @@ shadow_enabled = true
 environment = SubResource("Environment_6ikth")
 
 [node name="Player" parent="." instance=ExtResource("1_8je17")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.8749, 14.1495, -107.347)
+transform = Transform3D(0.999369, -0.0324418, 0.014442, 0.0324573, 0.999473, -0.000842813, -0.014407, 0.00131101, 0.999895, 86.8749, 14.1495, -107.347)
+run_speed = 30.0
+walk_speed = 20.0
 
 [node name="slender man" parent="." instance=ExtResource("3_l6ruh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.7674, -34.0907, -24.6894)
+transform = Transform3D(-0.999404, 0, -0.0345332, 0, 1, 0, 0.0345332, 0, -0.999404, -50.3067, 0.37858, -23.2142)
+
+[node name="slender man2" parent="." instance=ExtResource("3_l6ruh")]
+transform = Transform3D(-0.610767, 0, 0.79181, 0, 1, 0, -0.79181, 0, -0.610767, -54.6004, 1.76328, 48.3097)

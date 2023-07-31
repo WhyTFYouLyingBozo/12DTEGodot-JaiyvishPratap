@@ -1,7 +1,12 @@
 extends CharacterBody3D
 
 @export var mouse_sensitivity = 0.001
-const SPEED = 14.0
+var SPEED = 10
+
+@export var run_speed = 20.0
+@export var walk_speed = 10.0
+@export var FRICTION = 0.01
+
 const JUMP_VELOCITY = 10
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -18,6 +23,13 @@ func _unhandled_input(event):
 
 func _physics_process(delta):
 	# Add the gravity.
+	
+	if Input.is_action_pressed("run"):
+		SPEED = run_speed
+	else:
+		SPEED = walk_speed
+	
+	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
@@ -30,10 +42,10 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = move_toward(velocity.x, direction.x * SPEED,FRICTION)
+		velocity.z = move_toward(velocity.z, direction.z * SPEED,FRICTION)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, FRICTION)
+		velocity.z = move_toward(velocity.z, 0, FRICTION)
 
 	move_and_slide()
