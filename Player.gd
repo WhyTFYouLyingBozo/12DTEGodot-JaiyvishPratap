@@ -1,11 +1,11 @@
 extends CharacterBody3D
 
 @export var mouse_sensitivity = 0.001
-var SPEED = 10
+var SPEED = 5
 
 @export var run_speed = 20.0
 @export var walk_speed = 10.0
-@export var FRICTION = 0.01
+@export var FRICTION = 0.09
 
 const JUMP_VELOCITY = 10
 

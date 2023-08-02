@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://briq17f7isx8u" path="res://Player.tscn" id="1_8je17"]
 [ext_resource type="PackedScene" uid="uid://dfv18yy8mkka8" path="res://building.tscn" id="1_nm2g1"]
-[ext_resource type="PackedScene" uid="uid://ug7tjja5ues6" path="res://slender man.blend" id="3_l6ruh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2yhjd"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -17,9 +16,9 @@ sky = SubResource("Sky_08x8y")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="world" type="Node3D"]
+[sub_resource type="NavigationMesh" id="NavigationMesh_loipx"]
 
-[node name="Building" parent="." instance=ExtResource("1_nm2g1")]
+[node name="world" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -30,11 +29,9 @@ environment = SubResource("Environment_6ikth")
 
 [node name="Player" parent="." instance=ExtResource("1_8je17")]
 transform = Transform3D(0.999369, -0.0324418, 0.014442, 0.0324573, 0.999473, -0.000842813, -0.014407, 0.00131101, 0.999895, 86.8749, 14.1495, -107.347)
-run_speed = 30.0
-walk_speed = 20.0
+mouse_sensitivity = 0.01
 
-[node name="slender man" parent="." instance=ExtResource("3_l6ruh")]
-transform = Transform3D(-0.999404, 0, -0.0345332, 0, 1, 0, 0.0345332, 0, -0.999404, -50.3067, 0.37858, -23.2142)
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_loipx")
 
-[node name="slender man2" parent="." instance=ExtResource("3_l6ruh")]
-transform = Transform3D(-0.610767, 0, 0.79181, 0, 1, 0, -0.79181, 0, -0.610767, -54.6004, 1.76328, 48.3097)
+[node name="Building" parent="NavigationRegion3D" instance=ExtResource("1_nm2g1")]
